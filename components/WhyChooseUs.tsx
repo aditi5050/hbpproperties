@@ -7,25 +7,25 @@ const points = [
     icon: BadgePercent,
     title: "Best Rates Guaranteed",
     description: "Market se better deals and strong negotiation.",
-    border: "border-t-[#30B29A]",
+    border: "border-t-gold",
   },
   {
     icon: FileCheck2,
     title: "Zero Paperwork Tension",
     description: "Our legal team handles all documentation.",
-    border: "border-t-[#4C6FFF]",
+    border: "border-t-dark",
   },
   {
     icon: Gem,
     title: "Exclusive Properties",
     description: "Access listings not available publicly.",
-    border: "border-t-[#E08D32]",
+    border: "border-t-gold-700",
   },
   {
     icon: ShieldCheck,
     title: "Trusted Local Experts",
-    description: "12+ years of real estate experience.",
-    border: "border-t-[#D4AF37]",
+    description: "50+ years of real estate experience.",
+    border: "border-t-dark-light",
   },
 ] as const;
 

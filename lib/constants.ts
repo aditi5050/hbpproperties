@@ -52,7 +52,7 @@ export const SERVICE_CARDS = [
 ] as const;
 
 export const STATS = [
-  { label: "Years of Experience", value: 12, suffix: "+" },
+  { label: "Years of Experience", value: 50, suffix: "+" },
   { label: "Properties Sold", value: 850, suffix: "+" },
   { label: "Happy Clients", value: 1200, suffix: "+" },
 ] as const;
