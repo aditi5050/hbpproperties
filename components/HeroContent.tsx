@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function HeroContent() {
   return (
-    <div className="max-w-5xl mx-auto text-white text-center px-1">
+    <div className="max-w-3xl px-6 text-center">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function HeroContent() {
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
-        className="text-[42px] sm:text-6xl lg:text-[72px] font-black leading-[1.06] tracking-tight max-w-4xl mx-auto"
+        className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
       >
         Trusted Real Estate Experts in Tri-City
       </motion.h1>
@@ -36,23 +36,26 @@ export default function HeroContent() {
         initial={{ opacity: 0, y: 22 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-        className="mt-6 text-lg md:text-xl text-gray-100/95 max-w-3xl mx-auto leading-relaxed"
+        className="text-gray-300 text-lg md:text-xl mb-8"
       >
-        Buy, sell, rent and invest in Mohali, Chandigarh and Panchkula with confidence.
+        Buy, sell, rent and invest with confidence.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-        className="mt-10 flex flex-wrap justify-center gap-4 sm:gap-5"
+        className="flex gap-4 justify-center"
       >
-        <Link href="#properties" className="btn-primary inline-flex items-center justify-center text-base px-8 py-3.5 h-12 min-w-[190px] w-full sm:w-auto shadow-lg shadow-gold/30 hover:scale-[1.02]">
+        <Link
+          href="/services"
+          className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-medium rounded-full shadow-lg hover:scale-105 transition"
+        >
           View Properties
         </Link>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center text-base px-8 py-3.5 h-12 min-w-[190px] w-full sm:w-auto rounded-xl border-2 border-white text-white bg-white/5 font-semibold transition-all hover:bg-white hover:text-dark hover:scale-[1.02]"
+          className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition"
         >
           Contact Us
         </Link>

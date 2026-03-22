@@ -11,12 +11,12 @@ export const COMPANY = {
     "Mohali, Punjab, India",
   ],
   contacts: [
-    { name: "Sunder Ram Vinaik", phone: "98558-21393" },
     { name: "Harmeet", phone: "91658-00003" },
+    { name: "Sunder Ram Vinaik", phone: "98558-21393" },
     { name: "Bhupinder", phone: "97794-57663" },
     { name: "Parveen", phone: "99141-06405" },
   ],
-  whatsappNumber: "919855821393",
+  whatsappNumber: "919165800003",
 };
 
 export const NAV_LINKS = [

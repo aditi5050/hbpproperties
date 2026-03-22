@@ -6,7 +6,6 @@ import ServiceCard from "@/components/ServiceCard";
 import AnimatedStats from "@/components/AnimatedStats";
 import Testimonials from "@/components/Testimonials";
 import InquiryForm from "@/components/InquiryForm";
-import PropertySearchAndList from "@/components/PropertySearchAndList";
 import HeroContent from "@/components/HeroContent";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ContactInfo from "@/components/ContactInfo";
@@ -15,52 +14,54 @@ import { COMPANY, SERVICE_CARDS, STATS } from "@/lib/constants";
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.72),rgba(0,0,0,0.34))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_22%,rgba(201,162,39,0.2),transparent_33%)]" />
+        <div className="absolute inset-0 bg-black/60" />
         <Container className="relative z-10 py-24 md:py-28">
           <HeroContent />
         </Container>
       </section>
 
-      <section className="section-padding pt-16 md:pt-20">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <Reveal>
-            <div>
-              <SectionTitle
-                eyebrow="About HBP"
-                title="Trusted Advisors for Tri-City Real Estate"
-                subtitle="HBP Properties is a trusted real estate firm specializing in Tri-City properties including Mohali, Chandigarh, and Panchkula."
-              />
-              <div className="h-1 w-24 rounded-full bg-gold mt-1 mb-5" />
-              <p className="text-gray-600 mt-4 leading-relaxed">
-                We combine on-ground market intelligence, verified listings, and client-first guidance to help families and investors make confident decisions.
-              </p>
-              <div className="mt-6 max-w-md rounded-2xl border border-gold/35 bg-gold/10 p-5 shadow-sm">
-                <p className="text-xs uppercase tracking-[0.16em] text-gold-700 font-semibold">RERA Registered</p>
-                <p className="text-lg font-bold text-dark mt-2">{COMPANY.rera}</p>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div>
-              <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-2xl border border-gold/20">
-                <Image src="/assets/hbpowner.jpeg" alt="HBP Owner" fill className="object-cover" />
-              </div>
-              <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_10px_28px_rgba(15,23,42,0.12)]">
-                <p className="text-xs uppercase tracking-[0.14em] text-gold-700 font-semibold">Founder</p>
-                <p className="text-lg font-bold text-dark mt-1">Sunder Ram Vinaik</p>
-                <p className="text-sm md:text-base text-slate-600 mt-2">
-                  Founder of HBP Properties with over 50 years of experience in the Tri-City real estate market.
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <div className="max-w-xl order-2 lg:order-1 text-left">
+                <p className="text-xs tracking-widest text-yellow-600 mb-4">ABOUT HBP</p>
+                <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-gray-900 mb-6">
+                  Trusted Advisors for Tri-City Real Estate
+                </h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  HBP Properties is a trusted real estate firm specializing in Tri-City properties including Mohali, Chandigarh, and Panchkula.
                 </p>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  We combine on-ground market intelligence, verified listings, and client-first guidance to help families and investors make confident decisions.
+                </p>
+                <div className="bg-yellow-50 border border-yellow-200 px-6 py-5 rounded-xl w-full mt-6">
+                  <p className="text-xs text-red-500 tracking-wider mb-1">RERA REGISTERED</p>
+                  <p className="text-red-600 font-semibold">{COMPANY.rera}</p>
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="flex flex-col items-center gap-6 order-1 lg:order-2">
+                <div className="w-[280px] md:w-[340px]">
+                  <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]">
+                    <Image src="/assets/hbpowner.jpeg" alt="HBP Owner" fill className="object-cover object-top" />
+                  </div>
+                </div>
+                <div className="w-[280px] md:w-[340px] bg-gray-100 p-6 rounded-2xl shadow-md text-center">
+                  <p className="text-xs tracking-widest text-gray-500 mb-2">FOUNDER</p>
+                  <h3 className="text-xl md:text-2xl font-semibold">Sunder Ram Vinaik</h3>
+                  <p className="text-gray-600 mt-3 text-sm md:text-base leading-relaxed">
+                    Founder of HBP Properties with over 50 years of experience in the Tri-City real estate market.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
-
-      <WhyChooseUs />
 
       <section className="section-padding">
         <Reveal>
@@ -89,18 +90,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-padding pt-0" id="properties">
-        <Reveal>
-          <SectionTitle
-            eyebrow="Properties"
-            title="Property Listings"
-            subtitle="Browse curated opportunities and quickly search by location or objective."
-          />
-        </Reveal>
-        <div className="mt-8">
-          <PropertySearchAndList />
-        </div>
-      </section>
+      <WhyChooseUs />
 
       <section className="section-padding pt-0" id="certifications">
         <Reveal>
@@ -111,21 +101,29 @@ export default function HomePage() {
             center
           />
         </Reveal>
-        <div className="grid lg:grid-cols-2 gap-8 mt-10">
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-12">
           <Reveal>
-            <article className="rounded-2xl border-4 border-gold/25 bg-white p-6 shadow-[0_16px_38px_rgba(15,23,42,0.12)]">
-              <h3 className="text-xl font-semibold mb-4">Certificate of Incorporation 1</h3>
-              <div className="relative h-[420px] rounded-lg overflow-hidden bg-white">
-                <Image src="/assets/certificate1.jpeg" alt="Certificate of Incorporation 1" fill className="object-contain" />
-              </div>
+            <article className="bg-white p-6 rounded-2xl shadow-sm">
+              <h3 className="mb-4 font-semibold text-gray-900">Certificate of Incorporation 1</h3>
+              <Image
+                src="/assets/certificate1.jpeg"
+                alt="Certificate of Incorporation 1"
+                width={700}
+                height={900}
+                className="max-h-[350px] object-contain mx-auto"
+              />
             </article>
           </Reveal>
           <Reveal delay={0.08}>
-            <article className="rounded-2xl border-4 border-gold/25 bg-white p-6 shadow-[0_16px_38px_rgba(15,23,42,0.12)]">
-              <h3 className="text-xl font-semibold mb-4">Certificate of Incorporation 2</h3>
-              <div className="relative h-[420px] rounded-lg overflow-hidden bg-white">
-                <Image src="/assets/certificate.jpg" alt="Certificate of Incorporation 2" fill className="object-contain" />
-              </div>
+            <article className="bg-white p-6 rounded-2xl shadow-sm">
+              <h3 className="mb-4 font-semibold text-gray-900">Certificate of Incorporation 2</h3>
+              <Image
+                src="/assets/certificate.jpg"
+                alt="Certificate of Incorporation 2"
+                width={700}
+                height={900}
+                className="max-h-[350px] object-contain mx-auto"
+              />
             </article>
           </Reveal>
         </div>
@@ -153,7 +151,7 @@ export default function HomePage() {
         <div className="mt-8 glass-card rounded-2xl p-4">
           <iframe
             title="HBP Properties Mohali Map"
-            src="https://maps.google.com/maps?q=Sohana%20Landran%20Road%20Sector-77%20Sohana%20Mohali&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=HBP%20Property%2C%20near%20Govt%20Girls%20School%2C%20Sector%2077%2C%20Sohana%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab%20140308&t=&z=15&ie=UTF8&iwloc=&output=embed"
             className="w-full h-[360px] rounded-xl border-0"
             loading="lazy"
           />

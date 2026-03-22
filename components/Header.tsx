@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Facebook, Instagram, Menu, Phone, Twitter, X } from "lucide-react";
+import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { COMPANY, NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -13,64 +14,27 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 shadow-[0_8px_24px_rgba(15,23,42,0.2)]">
-      <div className="bg-dark text-white border-b border-white/10">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 h-10 md:h-11 flex items-center justify-between gap-2 text-xs sm:text-sm">
-          <div className="flex items-center gap-1 sm:gap-2">
-            <Link href="https://facebook.com" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/10" aria-label="Facebook">
-              <Facebook size={14} />
-            </Link>
-            <Link href="https://instagram.com" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/10" aria-label="Instagram">
-              <Instagram size={14} />
-            </Link>
-            <Link href="https://twitter.com" target="_blank" rel="noreferrer" className="p-1.5 rounded-md hover:bg-white/10" aria-label="Twitter">
-              <Twitter size={14} />
-            </Link>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-2">
-            <Link
-              href={`tel:${COMPANY.contacts[0].phone.replace(/-/g, "")}`}
-              className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1.5 hover:bg-white/20 transition-colors"
-            >
-              <Phone size={12} /> Call
-            </Link>
-            <Link
-              href={`https://wa.me/${COMPANY.whatsappNumber}`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 rounded-full bg-[#25D366] text-white px-2.5 py-1.5 hover:opacity-90 transition-opacity"
-            >
-              WhatsApp
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="backdrop-blur-md bg-dark/85 border-b border-gold/25">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 h-[78px] md:h-[84px] grid grid-cols-[auto_1fr_auto] items-center gap-6 md:gap-8">
-        <Link href="/" className="flex items-center gap-3 justify-self-start" onClick={() => setOpen(false)}>
+    <header className="fixed top-0 w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/assets/hbplogo.jpeg"
             alt="HBP Properties"
-            width={54}
-            height={54}
-            className="rounded-full object-cover border-2 border-gold/60 ring-4 ring-white/15 shadow-lg w-11 h-11 md:w-[54px] md:h-[54px]"
+            width={48}
+            height={48}
+            className="rounded-full object-cover border border-white/20 shadow-md w-12 h-12"
           />
-          <div className="leading-tight">
-            <span className="text-white font-semibold tracking-wide block text-[15px] md:text-base">HBP Properties</span>
-            <span className="text-[11px] text-gold/90 uppercase tracking-[0.12em]">Tri-City Real Estate</span>
-          </div>
+          <span className="text-white font-semibold text-xl tracking-wide">HBP Properties</span>
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center gap-7 lg:gap-9 justify-self-center">
+        <nav className="hidden md:flex items-center gap-8 text-base text-gray-200">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "relative text-sm font-medium transition-all hover:text-gold-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-gold after:transition-all hover:after:w-full px-0.5",
-                pathname === link.href ? "text-gold" : "text-white"
+                "hover:text-white transition",
+                pathname === link.href ? "text-white" : "text-gray-300"
               )}
             >
               {link.label}
@@ -78,20 +42,33 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2.5 justify-self-end">
+        <div className="hidden md:flex items-center gap-4 text-gray-200">
           <Link
-            href={`tel:${COMPANY.contacts[0].phone.replace(/-/g, "")}`}
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3.5 py-2 text-sm text-white hover:bg-white/10 transition-colors"
+            href="https://www.instagram.com/hbp.properties?igsh=MWE4MmwwbWl5OG94eQ=="
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-pink-500 text-2xl transition"
+            aria-label="Instagram"
           >
-            <Phone size={14} /> Call
+            <FaInstagram />
           </Link>
           <Link
             href={`https://wa.me/${COMPANY.whatsappNumber}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-3.5 py-2 text-sm text-white hover:opacity-90 transition-opacity"
+            className="hover:text-green-400 text-2xl transition"
+            aria-label="WhatsApp"
           >
-            WhatsApp
+            <FaWhatsapp />
+          </Link>
+          <Link
+            href="https://maps.google.com/?q=HBP%20Property%2C%20near%20Govt%20Girls%20School%2C%20Sector%2077%2C%20Sohana%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab%20140308"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 border border-white/30 px-4 py-2.5 rounded-full text-base hover:bg-white hover:text-black transition"
+          >
+            <FaMapMarkerAlt />
+            Locate Us
           </Link>
         </div>
 
@@ -103,10 +80,38 @@ export default function Header() {
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      </div>
 
       {open ? (
-        <div className="md:hidden px-4 pb-5 border-t border-white/10 bg-dark/95">
+        <div className="md:hidden px-6 pb-5 border-t border-white/10 bg-[#0f172a]/95">
+          <div className="pt-4 flex items-center gap-4 text-gray-200">
+            <Link
+              href="https://www.instagram.com/hbp.properties?igsh=MWE4MmwwbWl5OG94eQ=="
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-pink-500 transition text-xl"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </Link>
+            <Link
+              href={`https://wa.me/${COMPANY.whatsappNumber}`}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-green-400 transition text-xl"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </Link>
+            <Link
+              href="https://maps.google.com/?q=HBP%20Property%2C%20near%20Govt%20Girls%20School%2C%20Sector%2077%2C%20Sohana%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab%20140308"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 border border-white/30 px-3 py-2.5 rounded-full text-sm hover:bg-white hover:text-black transition"
+            >
+              <FaMapMarkerAlt />
+              Locate Us
+            </Link>
+          </div>
           <div className="pt-4 flex flex-col gap-3">
             {NAV_LINKS.map((link) => (
               <Link
