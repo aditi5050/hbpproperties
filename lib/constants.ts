@@ -2,7 +2,7 @@ export const COMPANY = {
   name: "HBP Properties",
   tagline: "We expertise in Tri-city Real Estate's & Lands",
   rera: "PBRERA-SAS81-REA2004",
-  email: "hbpproperty123@gmail.com",
+  email: "hbppropert123@gmail.com",
   leadDestination: "aditigoyalprg21@gmail.com",
   addressLines: [
     "Sohana Landran Road,",
@@ -23,9 +23,8 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Properties", href: "/#properties" },
   { label: "Certifications", href: "/certifications" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const SERVICE_CARDS = [

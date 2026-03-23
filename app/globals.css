@@ -36,4 +36,20 @@
   .section-padding {
     @apply py-24 md:py-28 px-4 md:px-8 max-w-7xl mx-auto;
   }
+  .locate-glow {
+    @apply bg-amber-300 text-slate-900 border border-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.6)];
+    animation: locate-pulse 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes locate-pulse {
+  0% {
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(251, 191, 36, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
+  }
 }

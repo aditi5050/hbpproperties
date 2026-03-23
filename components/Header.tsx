@@ -65,7 +65,7 @@ export default function Header() {
             href="https://maps.google.com/?q=HBP%20Property%2C%20near%20Govt%20Girls%20School%2C%20Sector%2077%2C%20Sohana%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab%20140308"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 border border-white/30 px-4 py-2.5 rounded-full text-base hover:bg-white hover:text-black transition"
+            className="locate-glow inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-base transition hover:bg-amber-200"
           >
             <FaMapMarkerAlt />
             Locate Us
@@ -106,7 +106,7 @@ export default function Header() {
               href="https://maps.google.com/?q=HBP%20Property%2C%20near%20Govt%20Girls%20School%2C%20Sector%2077%2C%20Sohana%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab%20140308"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 border border-white/30 px-3 py-2.5 rounded-full text-sm hover:bg-white hover:text-black transition"
+              className="locate-glow inline-flex items-center gap-2 px-3 py-2.5 rounded-full text-sm transition hover:bg-amber-200"
             >
               <FaMapMarkerAlt />
               Locate Us

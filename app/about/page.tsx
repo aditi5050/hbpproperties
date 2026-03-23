@@ -16,7 +16,7 @@ export default function AboutPage() {
           />
         </Reveal>
 
-        <div className="mt-10 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="mt-10 grid lg:grid-cols-2 gap-10 items-start">
           <Reveal>
             <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl border border-gold/20">
               <Image src="/assets/hbpowner.jpeg" alt="Owner of HBP Properties" fill className="object-cover" />
@@ -24,7 +24,7 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="space-y-5">
+            <div className="space-y-5 pt-2">
               <div className="glass-card rounded-xl p-6">
                 <h3 className="text-2xl font-semibold mb-3">Our Mission</h3>
                 <p className="text-gray-700 leading-relaxed">

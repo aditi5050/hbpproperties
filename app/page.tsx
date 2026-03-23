@@ -11,6 +11,8 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import ContactInfo from "@/components/ContactInfo";
 import { COMPANY, SERVICE_CARDS, STATS } from "@/lib/constants";
 
+const PROPERTY_TYPES = ["Houses", "Floors", "Land", "Commercial", "Agricultural"];
+
 export default function HomePage() {
   return (
     <>
@@ -24,9 +26,9 @@ export default function HomePage() {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <Reveal>
-              <div className="max-w-xl order-2 lg:order-1 text-left">
+              <div className="max-w-xl order-2 md:order-1 text-left space-y-6">
                 <p className="text-xs tracking-widest text-yellow-600 mb-4">ABOUT HBP</p>
                 <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-gray-900 mb-6">
                   Trusted Advisors for Tri-City Real Estate
@@ -37,29 +39,77 @@ export default function HomePage() {
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   We combine on-ground market intelligence, verified listings, and client-first guidance to help families and investors make confident decisions.
                 </p>
-                <div className="bg-yellow-50 border border-yellow-200 px-6 py-5 rounded-xl w-full mt-6">
-                  <p className="text-xs text-red-500 tracking-wider mb-1">RERA REGISTERED</p>
-                  <p className="text-red-600 font-semibold">{COMPANY.rera}</p>
+                <div className="flex flex-wrap items-start gap-6 mb-6">
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 w-fit shadow-sm">
+                    <p className="text-xs text-red-500 font-medium">RERA REGISTERED</p>
+                    <p className="text-red-600 font-semibold whitespace-nowrap">{COMPANY.rera}</p>
+                  </div>
+
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-3 shadow-sm max-w-xs">
+                    <p className="text-xs text-gray-500 mb-1">FOUNDER</p>
+                    <h3 className="text-base font-semibold text-black">Sunder Ram Vinaik</h3>
+                    <p className="text-gray-700 text-sm mt-1">
+                      Founder of HBP Properties with over 50 years of experience in the Tri-City real estate market.
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="flex flex-col items-center gap-6 order-1 lg:order-2">
-                <div className="w-[280px] md:w-[340px]">
-                  <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:scale-[1.02]">
+              <div className="order-1 md:order-2 flex justify-center md:justify-end">
+                <div className="w-[280px] md:w-[320px]">
+                  <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                     <Image src="/assets/hbpowner.jpeg" alt="HBP Owner" fill className="object-cover object-top" />
                   </div>
-                </div>
-                <div className="w-[280px] md:w-[340px] bg-gray-100 p-6 rounded-2xl shadow-md text-center">
-                  <p className="text-xs tracking-widest text-gray-500 mb-2">FOUNDER</p>
-                  <h3 className="text-xl md:text-2xl font-semibold">Sunder Ram Vinaik</h3>
-                  <p className="text-gray-600 mt-3 text-sm md:text-base leading-relaxed">
-                    Founder of HBP Properties with over 50 years of experience in the Tri-City real estate market.
-                  </p>
                 </div>
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding pt-0" id="certifications">
+        <Reveal>
+          <SectionTitle
+            title="Our Certifications"
+            subtitle="Certificate of Incorporation documents presented transparently for business credibility."
+            center
+          />
+        </Reveal>
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-8">
+          <Reveal>
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Certificate of Incorporation</h3>
+              <Image
+                src="/assets/certificate1.jpeg"
+                alt="Certificate of Incorporation"
+                width={700}
+                height={900}
+                className="w-full max-w-[420px] mx-auto object-contain"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">RERA Certificate</h3>
+              <Image
+                src="/assets/certificate.jpg"
+                alt="RERA Certificate"
+                width={700}
+                height={900}
+                className="w-full max-w-[420px] mx-auto object-contain"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-padding pt-0">
+        <Reveal>
+          <SectionTitle eyebrow="Track Record" title="Numbers That Build Trust" center />
+        </Reveal>
+        <div className="mt-10">
+          <AnimatedStats stats={[...STATS]} />
         </div>
       </section>
 
@@ -83,51 +133,26 @@ export default function HomePage() {
 
       <section className="section-padding pt-0">
         <Reveal>
-          <SectionTitle eyebrow="Track Record" title="Numbers That Build Trust" center />
+          <SectionTitle
+            eyebrow="We Deal In"
+            title="Homes, Floors, Land & More"
+            subtitle="We specialize in houses, floors, land, commercial, and agricultural properties across Tri-City."
+            center
+          />
         </Reveal>
-        <div className="mt-10">
-          <AnimatedStats stats={[...STATS]} />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-10">
+          {PROPERTY_TYPES.map((type, index) => (
+            <Reveal key={type} delay={index * 0.06}>
+              <div className="bg-white border border-slate-200 rounded-2xl px-5 py-6 text-center shadow-sm">
+                <p className="text-lg font-semibold text-slate-900">{type}</p>
+                <p className="text-sm text-slate-600 mt-2">Verified listings and trusted guidance.</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       <WhyChooseUs />
-
-      <section className="section-padding pt-0" id="certifications">
-        <Reveal>
-          <SectionTitle
-            eyebrow="Certifications"
-            title="Our Certifications"
-            subtitle="Certificate of Incorporation documents presented transparently for business credibility."
-            center
-          />
-        </Reveal>
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mt-12">
-          <Reveal>
-            <article className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="mb-4 font-semibold text-gray-900">Certificate of Incorporation 1</h3>
-              <Image
-                src="/assets/certificate1.jpeg"
-                alt="Certificate of Incorporation 1"
-                width={700}
-                height={900}
-                className="max-h-[350px] object-contain mx-auto"
-              />
-            </article>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <article className="bg-white p-6 rounded-2xl shadow-sm">
-              <h3 className="mb-4 font-semibold text-gray-900">Certificate of Incorporation 2</h3>
-              <Image
-                src="/assets/certificate.jpg"
-                alt="Certificate of Incorporation 2"
-                width={700}
-                height={900}
-                className="max-h-[350px] object-contain mx-auto"
-              />
-            </article>
-          </Reveal>
-        </div>
-      </section>
 
       <section className="section-padding pt-0">
         <Reveal>

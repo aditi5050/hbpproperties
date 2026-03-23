@@ -5,38 +5,33 @@ import Reveal from "@/components/Reveal";
 
 export default function CertificationsPage() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-white">
       <Container className="px-0">
         <Reveal>
           <SectionTitle
-            eyebrow="Certifications"
             title="Our Incorporation Certificates"
             subtitle="HBP Properties is committed to transparency and credibility."
             center
           />
         </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-8 mt-10">
+        <div className="grid lg:grid-cols-2 gap-10 mt-8">
           <Reveal>
-            <article className="glass-card rounded-xl p-6 shadow-2xl border-4 border-gold/30">
-              <h3 className="text-xl font-semibold mb-4">Certificate of Incorporation 1</h3>
-              <div className="relative h-[460px] bg-white rounded-md overflow-hidden">
-                <Image src="/assets/certificate1.jpeg" alt="Certificate of Incorporation 1" fill className="object-contain" />
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Certificate of Incorporation</h3>
+              <div className="relative w-full max-w-[420px] h-[460px] mx-auto">
+                <Image src="/assets/certificate1.jpeg" alt="Certificate of Incorporation" fill className="object-contain" />
               </div>
-            </article>
+            </div>
           </Reveal>
 
           <Reveal delay={0.08}>
-            <article className="glass-card rounded-xl p-6 shadow-2xl border-4 border-gold/30">
-              <h3 className="text-xl font-semibold mb-4">Certificate of Incorporation 2</h3>
-              <div className="h-[460px] rounded-md overflow-hidden bg-white">
-                <iframe
-                  src="/assets/Certificate2.pdf"
-                  title="Certificate of Incorporation 2"
-                  className="w-full h-full"
-                />
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">RERA Certificate</h3>
+              <div className="relative w-full max-w-[420px] h-[460px] mx-auto">
+                <Image src="/assets/certificate.jpg" alt="RERA Certificate" fill className="object-contain" />
               </div>
-            </article>
+            </div>
           </Reveal>
         </div>
       </Container>
