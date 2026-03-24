@@ -51,7 +51,7 @@ export default function HeroContent() {
           href="/services"
           className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-medium rounded-full shadow-lg hover:scale-105 transition"
         >
-          View Properties
+          Locate Us 
         </Link>
         <Link
           href="/contact"
