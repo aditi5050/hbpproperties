@@ -2,7 +2,7 @@ export const COMPANY = {
   name: "HBP Properties",
   tagline: "We expertise in Tri-city Real Estate's & Lands",
   rera: "PBRERA-SAS81-REA2004",
-  email: "hbppropert123@gmail.com",
+  email: "hbpropert123@gmail.com",
   leadDestination: "aditigoyalprg21@gmail.com",
   addressLines: [
     "Sohana Landran Road,",
@@ -53,7 +53,7 @@ export const SERVICE_CARDS = [
 export const STATS = [
   { label: "Years of Experience", value: 50, suffix: "+" },
   { label: "Properties Sold", value: 850, suffix: "+" },
-  { label: "Happy Clients", value: 1200, suffix: "+" },
+  { label: "Happy Clients", value: 3500, suffix: "+" },
 ] as const;
 
 export const TESTIMONIALS = [
